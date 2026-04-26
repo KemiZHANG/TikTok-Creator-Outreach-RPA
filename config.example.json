@@ -1,0 +1,167 @@
+{
+  "templates": {
+    "private_chat_btn": "private_chat_btn.png",
+    "send_photo_btn": "send_photo_btn.png",
+    "send_message_marker": "send_message_marker.png",
+    "ok_btn": "ok_btn.png",
+    "browser_crash_marker": "browser_crash_marker.png",
+    "browser_crash_marker_full": "browser_crash_marker_full.png",
+    "browser_crash_marker1": "browser_crash_marker1.png",
+    "find_creators_marker": "find_creators_marker.png",
+    "reload_btn": "reload_btn.png"
+  },
+  "coords": {
+    "creator_click": {
+      "x": 1000,
+      "y": 800
+    },
+    "scroll_area": {
+      "x": 1200,
+      "y": 700
+    },
+    "chat_input": {
+      "x": 1200,
+      "y": 900
+    },
+    "send_button": {
+      "x": 1400,
+      "y": 900
+    },
+    "close_creator_page": {
+      "x": 100,
+      "y": 50
+    },
+    "file_image_item": {
+      "x": 300,
+      "y": 250
+    },
+    "file_open_button": {
+      "x": 1000,
+      "y": 750
+    },
+    "send_photo_fallback": {
+      "x": 1200,
+      "y": 850
+    },
+    "private_chat_fallback": {
+      "x": 1400,
+      "y": 650
+    },
+    "browser_reload_button": {
+      "x": 120,
+      "y": 90
+    },
+    "product_category_dropdown": {
+      "x": 600,
+      "y": 600
+    },
+    "product_category_search": {
+      "x": 500,
+      "y": 650
+    },
+    "product_category_first_result": {
+      "x": 500,
+      "y": 720
+    },
+    "filter_blank_area": {
+      "x": 1500,
+      "y": 760
+    }
+  },
+  "ocr": {
+    "creator_name_region": {
+      "x": 550,
+      "y": 475,
+      "width": 290,
+      "height": 46
+    },
+    "contact_region": {
+      "x": 950,
+      "y": 520,
+      "width": 490,
+      "height": 135
+    },
+    "before_read_sleep": 0.5,
+    "scale": 3,
+    "lang": "eng",
+    "crash_ocr_enabled": true,
+    "crash_lang": "chi_sim+eng",
+    "crash_scale": 2,
+    "crash_psm": 6,
+    "crash_keywords": [
+      "reload",
+      "crash",
+      "error",
+      "重新加载",
+      "崩溃",
+      "错误代码"
+    ],
+    "crash_direct_ocr_enabled": true,
+    "crash_direct_ocr_cooldown": 12.0,
+    "crash_log_full_text": false,
+    "psm": 7,
+    "contact_psm": 6,
+    "debug_save": true,
+    "tesseract_cmd": ""
+  },
+  "timing": {
+    "pyautogui_pause": 0.07,
+    "move_duration": 0.24,
+    "before_click_sleep": 0.18,
+    "after_move_sleep": 0.08,
+    "after_click_sleep": 0.2,
+    "between_clicks": 0.14,
+    "page_transition_sleep": 2.0,
+    "page_close_sleep": 0.56,
+    "after_enter_creator_wait": 1.0,
+    "after_click_private_chat_wait": 0.6,
+    "after_open_file_dialog_wait": 0.67,
+    "after_select_file_wait": 0.18,
+    "after_click_open_wait": 0.49,
+    "after_click_ok_wait": 0.7,
+    "after_upload_settle_sleep": 0.32,
+    "after_paste_sleep": 0.18,
+    "after_send_text_wait": 0.6,
+    "before_scroll_sleep": 0.21,
+    "after_scroll_sleep": 0.32,
+    "after_return_list_sleep": 0.32,
+    "after_scroll_settle_sleep": 0.49,
+    "retry_sleep": 0.42,
+    "after_crash_reload_wait": 4.0,
+    "after_filter_dropdown_wait": 0.32,
+    "after_filter_search_wait": 0.39,
+    "after_filter_select_wait": 0.63,
+    "after_filter_collapse_wait": 0.32,
+    "restore_scroll_interval": 0.07
+  },
+  "timeouts": {
+    "template_wait": 3.2,
+    "creator_detail_confirm": 3.2,
+    "chat_window": 4.2,
+    "optional_ok": 2.4,
+    "post_send_check": 2.0,
+    "file_dialog": 2.2,
+    "crash_detect": 1.0,
+    "find_creators_after_reload": 28.0,
+    "recovery_template_wait": 3.0
+  },
+  "matching": {
+    "default_confidence": 0.8,
+    "browser_crash_confidence": 0.55,
+    "browser_crash_reload_confidence": 0.95,
+    "browser_crash_ocr_candidate_confidence": 0.72,
+    "browser_crash_marker_ocr_candidate_confidence": 0.42,
+    "crash_check_find_creators_first": false,
+    "crash_candidate_ocr_enabled": false,
+    "crash_debug_scores": false,
+    "crash_negative_cache_seconds": 1.0,
+    "grayscale": false,
+    "pre_search_sleep": 0.2,
+    "search_retry_interval": 0.35
+  },
+  "retry": {
+    "open_chat_attempts": 3,
+    "send_photo_attempts": 2,
+    "send_text_attempts": 2
+  }
+}

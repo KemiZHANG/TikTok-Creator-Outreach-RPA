@@ -1,0 +1,8 @@
+pyautogui
+pyperclip
+pillow
+opencv-python
+keyboard
+numpy
+pytesseract
+openpyxl

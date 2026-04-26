@@ -1,0 +1,32 @@
+# Runtime data
+logs/*
+!logs/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+*.xlsx
+
+# Local machine configuration
+config.json
+运行指令.txt
+
+# Template screenshots captured from the local UI
+images/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

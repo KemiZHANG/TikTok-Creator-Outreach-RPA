@@ -1,0 +1,17 @@
+请把以下模板图放到本目录：
+
+private_chat_btn.png
+send_photo_btn.png
+send_message_marker.png
+ok_btn.png
+browser_crash_marker.png
+browser_crash_marker_full.png
+browser_crash_marker1.png
+find_creators_marker.png
+reload_btn.png
+
+建议：
+1. 模板尽量小，只截按钮或文字主体。
+2. 模板截图环境要和运行环境一致。
+3. 如果识别不稳定，请优先重新截模板，再调整 config.json 里的 confidence。
+4. 不建议把包含达人信息、账号信息或后台数据的截图提交到公开仓库。
