@@ -4,6 +4,7 @@ from typing import Dict
 
 import pyautogui
 
+from auth_client import AuthorizationError, enforce_authorization
 from contact_export import append_contact_if_new, extract_contacts, init_contact_db
 from creator_db import (
     add_processed_creator,
@@ -581,6 +582,12 @@ def process_one_creator_with_db(
 
 
 def main() -> None:
+    try:
+        enforce_authorization()
+    except AuthorizationError as exc:
+        print(f"授权失败，main2 已停止: {exc}")
+        return
+
     config = load_config()
     runtime_inputs = get_runtime_inputs()
 

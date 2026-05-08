@@ -2,6 +2,7 @@ from typing import Callable, Dict, Optional
 
 import pyautogui
 
+from auth_client import AuthorizationError, enforce_authorization
 from utils import (
     StepFailedException,
     UserAbortException,
@@ -206,6 +207,12 @@ def run_startup_checks(config: dict) -> None:
 
 
 def main() -> None:
+    try:
+        enforce_authorization()
+    except AuthorizationError as exc:
+        print(f"授权失败，程序已停止: {exc}")
+        return
+
     config = load_config()
     runtime_inputs = get_runtime_inputs()
     run_startup_checks(config)
