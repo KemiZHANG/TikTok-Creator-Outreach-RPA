@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "api_url": "https://your-auth-server.example.com/api/authorize",
+  "license_key": "company-user-001",
+  "timeout_seconds": 8
+}

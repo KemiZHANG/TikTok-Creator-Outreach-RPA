@@ -8,6 +8,7 @@ logs/*
 
 # Local machine configuration
 config.json
+auth_config.json
 运行指令.txt
 
 # Template screenshots captured from the local UI
@@ -19,6 +20,10 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+build/
+dist/
+release/
+*.spec
 
 # Virtual environments
 .venv/

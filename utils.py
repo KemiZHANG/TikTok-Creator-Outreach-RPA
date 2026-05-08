@@ -1,4 +1,5 @@
 import json
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +14,10 @@ import pyperclip
 
 pyautogui.FAILSAFE = True
 
-BASE_DIR = Path(__file__).resolve().parent
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys.executable).resolve().parent
+else:
+    BASE_DIR = Path(__file__).resolve().parent
 LOGS_DIR = BASE_DIR / "logs"
 IMAGES_DIR = BASE_DIR / "images"
 CONFIG_PATH = BASE_DIR / "config.json"
