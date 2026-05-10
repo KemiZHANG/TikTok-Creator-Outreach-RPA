@@ -13,6 +13,7 @@ python -m PyInstaller `
 
 $packageDir = Join-Path $projectRoot "release\TikTok_BD_Auto"
 New-Item -ItemType Directory -Force -Path $packageDir | Out-Null
+Remove-Item (Join-Path $packageDir "auth_config.json") -Force -ErrorAction SilentlyContinue
 Copy-Item "dist\TikTok_BD_Auto.exe" $packageDir -Force
 Copy-Item "config.example.json" (Join-Path $packageDir "config.example.json") -Force
 Copy-Item "auth_config.example.json" (Join-Path $packageDir "auth_config.example.json") -Force
@@ -23,5 +24,10 @@ New-Item -ItemType Directory -Force -Path (Join-Path $packageDir "images") | Out
 New-Item -ItemType Directory -Force -Path (Join-Path $packageDir "logs") | Out-Null
 Copy-Item "images\template_notes.txt" (Join-Path $packageDir "images\template_notes.txt") -Force
 
+$zipPath = Join-Path $projectRoot "release\TikTok_BD_Auto.zip"
+Remove-Item $zipPath -Force -ErrorAction SilentlyContinue
+Compress-Archive -Path (Join-Path $packageDir "*") -DestinationPath $zipPath -Force
+
 Write-Host "Release package created:"
 Write-Host $packageDir
+Write-Host $zipPath

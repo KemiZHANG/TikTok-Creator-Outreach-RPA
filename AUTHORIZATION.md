@@ -1,34 +1,42 @@
 # Online Authorization
 
-This project can optionally check an online authorization service before running.
+The packaged TikTok RPA requires online authorization before it runs.
 
-By default, the check is disabled so local development still works:
+For distributed `.exe` builds:
 
-```powershell
-python main2.py
+- Authorization is always enabled.
+- The authorization server URL is embedded into the exe during final packaging.
+- `auth_config.json` only stores the user's license key.
+- If `auth_config.json` is missing, malformed, or has no `license_key`, the exe stops.
+
+Example `auth_config.json`:
+
+```json
+{
+  "license_key": "staff-001",
+  "timeout_seconds": 8
+}
 ```
 
-To require authorization:
+Local Python source runs can still be controlled with environment variables for development:
 
 ```powershell
 $env:RPA_AUTH_ENABLED="1"
-$env:RPA_AUTH_API_URL="https://your-auth-server.example.com/api/authorize"
-$env:RPA_LICENSE_KEY="company-user-001"
+$env:RPA_AUTH_API_URL="http://SERVER_PUBLIC_IP:8000/api/authorize"
+$env:RPA_LICENSE_KEY="staff-001"
 python main2.py
 ```
 
-If `RPA_LICENSE_KEY` is not set, the script asks for it at startup.
-
 ## App ID
-
-This project identifies itself as:
 
 ```text
 tiktok_bd_auto
 ```
 
-Use this value in the authorization server's `allowed_apps` field.
+## Upgrade Existing Computers
+
+Keep each computer's existing `config.json`, `images\`, OCR regions, coordinates, and templates. Upgrade by replacing only the exe and adding an `auth_config.json` with that user's license key.
 
 ## Security Note
 
-This is an online permission gate for practical internal use. If users receive editable Python source code, a technical user could remove the authorization check. For stronger protection, distribute the RPA as an `.exe` and keep the source code private.
+This is a practical internal permission gate. Do not distribute editable Python source code to end users; distribute the packaged exe instead.
