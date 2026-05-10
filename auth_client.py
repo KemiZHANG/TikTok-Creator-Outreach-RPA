@@ -19,9 +19,7 @@ APP_ID = "tiktok_bd_auto"
 APP_VERSION = "1.0"
 CONFIG_FILE_NAME = "auth_config.json"
 
-# Fill this with the Aliyun authorization endpoint before the final release,
-# for example: http://SERVER_PUBLIC_IP:8000/api/authorize
-EMBEDDED_AUTH_API_URL = ""
+EMBEDDED_AUTH_API_URL = "http://8.134.92.143:8000/api/authorize"
 
 
 class AuthorizationError(Exception):
